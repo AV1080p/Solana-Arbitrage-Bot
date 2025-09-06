@@ -1,0 +1,32 @@
+.env
+target
+blacklist.txt
+yellowstone-grpc
+pumpfun
+pumpfun-sdk
+substreams-solana-idl-examples
+pumpswap-sdk
+pump-swap-sdk
+src_restore
+# Rust build artifacts
+/target
+**/*.rs.bk
+Cargo.lock
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Environment files
+.env
+.env.*
+
+# Transaction records
+/record/
+/record/pumpfun/
+/record/pumpswap/
+/record/raydium/
+
+# Logs
+*.log 

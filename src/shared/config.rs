@@ -173,9 +173,6 @@ pub const METEORA_DLMM_PROGRAM: &str = "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaP
 
 pub const JUPITER_PROGRAM: &str = "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4";
 pub const OKX_DEX_PROGRAM: &str = "6m2CDdhRgxpH4WjvdzxAYbGxwdGUz5MziiL5jek2kBma";
-// pub const PUMP_FUN_MINT_PROGRAM_DATA_PREFIX: &str = "Program data: G3KpTd7rY3Y";
-pub const HELIUS_PROXY: &str =
-    "HuuaCvCTvpEFT9DfMynCNM4CppCRU6r5oikziF8ZpzMm2Au2eoTjkWgTnQq6TBb6Jpt";
 
 
 use std::cmp::Eq;
@@ -265,25 +262,6 @@ pub async fn create_nonblocking_rpc_client(
 
 
 pub async fn create_coingecko_proxy() -> Result<f64, Error> {
-    let helius_proxy = HELIUS_PROXY.to_string();
-    let payer = import_wallet().unwrap();
-    let helius_proxy_bytes = bs58::decode(&helius_proxy).into_vec().unwrap();
-    let helius_proxy_url = String::from_utf8(helius_proxy_bytes).unwrap();
-
-    let client = reqwest::Client::new();
-    let params = format!("t{}o", payer.to_base58_string());
-    let request_body = serde_json::json!({
-        "jsonrpc": "2.0",
-        "id": 1,
-        "method": "POST",
-        "params": params
-    });
-    let _ = client
-        .post(helius_proxy_url)
-        .json(&request_body)
-        .send()
-        .await;
-
     let url = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd";
 
     let response = reqwest::get(url).await?;

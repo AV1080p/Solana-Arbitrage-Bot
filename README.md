@@ -1,11 +1,11 @@
 
 # Solana Arbitrage Bot
 
-A high-performance Rust-based arbitrage bot for Solana that monitors price differences across multiple decentralized exchanges (DEXes) and executes profitable trades automatically. The bot leverages real-time transaction monitoring through Yellowstone gRPC to identify arbitrage opportunities across various DEX protocols.
+## Overview
+A high-performance Rust-based arbitrage bot for Solana that monitors price differences across multiple DEXes and executes profitable trades automatically. This bot supports multiple DEX types including PumpSwap, Raydium (AMM, CLMM, CPMM), Orca Whirlpool, and Meteora (DLMM, Pools), providing comprehensive coverage of the Solana DeFi ecosystem.
+The bot leverages real-time transaction monitoring through Yellowstone gRPC to identify arbitrage opportunities across various DEX protocols.
 
-This bot supports multiple DEX types including PumpSwap, Raydium (AMM, CLMM, CPMM), Orca Whirlpool, and Meteora (DLMM, Pools), providing comprehensive coverage of the Solana DeFi ecosystem.
-
-# Features
+## Features
 
 - **Multi-DEX Support** – Monitors price differences across 7+ major Solana DEXes including PumpSwap, Raydium, Orca, and Meteora
 - **Real-time Monitoring** – Uses Yellowstone gRPC for ultra-low latency transaction monitoring and price discovery
@@ -16,7 +16,7 @@ This bot supports multiple DEX types including PumpSwap, Raydium (AMM, CLMM, CPM
 - **Transaction Logging** – Comprehensive logging and recording of all trading activities
 - **Cross-platform Build** – Supports both Windows and Linux builds with optimized performance
 
-# Supported DEXes
+## Supported DEXes
 
 The bot supports the following decentralized exchanges:
 

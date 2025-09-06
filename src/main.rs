@@ -1,16 +1,16 @@
 use solana_vntr_sniper::{
-    common::{config::Config, constants::RUN_MSG},
-    core::token::{TokenModel, TokenMetadata, find_pools_for_token},
-    dex::dex_registry::{DEXRegistry, identify_dex_from_pool},
-    engine::monitor::arbitrage_monitor,
+    shared::{config::Config, constants::RUN_MSG},
+    domain::token::{TokenModel, TokenMetadata, find_pools_for_token},
+    infrastructure::dex::{DEXRegistry, identify_dex_from_pool},
+    application::monitoring::arbitrage_monitor,
 };
 use anchor_client::solana_sdk::pubkey::Pubkey;
 use std::{str::FromStr, sync::Arc};
 use chrono::Utc;
 use tokio::time::{sleep, Duration};
-use solana_vntr_sniper::common::config::SwapConfig;
-use solana_vntr_sniper::engine::swap::SwapDirection;
-use solana_vntr_sniper::engine::swap::SwapInType;
+use solana_vntr_sniper::shared::config::SwapConfig;
+use solana_vntr_sniper::application::swapping::SwapDirection;
+use solana_vntr_sniper::application::swapping::SwapInType;
 
 #[tokio::main]
 async fn main() {
